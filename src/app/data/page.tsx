@@ -1,10 +1,29 @@
 "use client";
 
 import { TrendingUp, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
-import SourceBadge from '@/components/citations/SourceBadge';
-import { getMockInflationData, getMockUnemploymentData, getMockPolicyRate } from '@/lib/sources';
 
-// Define the TrendIndicator component that's missing
+// Inline SourceBadge to avoid import issues
+function SourceBadge({ source }: { source: string }) {
+  return (
+    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+      {source}
+    </span>
+  );
+}
+
+// Mock data functions inline to avoid import issues
+function getMockInflationData() {
+  return { source: "Statistics Canada" };
+}
+
+function getMockUnemploymentData() {
+  return { source: "Statistics Canada" };
+}
+
+function getMockPolicyRate() {
+  return { source: "Bank of Canada" };
+}
+
 function TrendIndicator({ trend, change }: { trend: 'up' | 'down' | 'stable'; change: number }) {
   if (trend === 'up') {
     return (
