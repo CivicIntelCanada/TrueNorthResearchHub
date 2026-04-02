@@ -84,7 +84,7 @@ export default function Explore() {
             <div>
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold mb-3">3</div>
               <h4 className="font-semibold text-gray-900 mb-2">Escape Anytime</h4>
-              <p className="text-sm text-gray-600">Lost? Click "Exit to Topic View" for structured information or "Home" to restart.</p>
+              <p className="text-sm text-gray-600">Lost? Click &quot;Exit to Topic View&quot; for structured information or &quot;Home&quot; to restart.</p>
             </div>
           </div>
         </div>
