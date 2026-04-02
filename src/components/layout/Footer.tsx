@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Canada's most comprehensive research database. Every fact sourced, every source accessible.
+              Canada&apos;s most comprehensive research database. Every fact sourced, every source accessible.
             </p>
             <div className="flex gap-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
