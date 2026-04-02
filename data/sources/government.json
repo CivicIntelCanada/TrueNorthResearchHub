@@ -1,0 +1,97 @@
+{
+  "sources": [
+    {
+      "id": "statscan-cpi",
+      "name": "Statistics Canada - Consumer Price Index",
+      "shortName": "StatsCan CPI",
+      "category": "government",
+      "subcategory": "economic",
+      "credibility": "primary",
+      "biasRating": "none",
+      "reliabilityScore": 10,
+      "updateFrequency": "monthly",
+      "nextUpdate": "2026-05-20",
+      "urls": {
+        "main": "https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes",
+        "api": "https://www150.statcan.gc.ca/t1/wds/rest/getCubeData",
+        "table": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401",
+        "rss": "https://www.statcan.gc.ca/en/rss/subjects/prices_and_price_indexes"
+      },
+      "contact": {
+        "name": "Prices Division",
+        "email": "infostats@statcan.gc.ca",
+        "phone": "1-800-263-1136"
+      },
+      "methodology": "https://www.statcan.gc.ca/en/microsimulation/cpi/methodology",
+      "citationFormat": "Statistics Canada. (YYYY, Month DD). Consumer Price Index, Table 18-10-0004-01. Retrieved from https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401",
+      "lastVerified": "2026-04-02"
+    },
+    {
+      "id": "bankofcanada-rates",
+      "name": "Bank of Canada - Policy Interest Rate",
+      "shortName": "Bank of Canada",
+      "category": "government",
+      "subcategory": "monetary",
+      "credibility": "primary",
+      "biasRating": "none",
+      "reliabilityScore": 10,
+      "updateFrequency": "monthly",
+      "nextUpdate": "2026-04-09",
+      "urls": {
+        "main": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/",
+        "api": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json",
+        "table": "https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/"
+      },
+      "contact": {
+        "name": "Media Relations",
+        "email": "media@bankofcanada.ca"
+      },
+      "methodology": "https://www.bankofcanada.ca/core-functions/monetary-policy/",
+      "citationFormat": "Bank of Canada. (YYYY). Policy Interest Rate. Retrieved from https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/",
+      "lastVerified": "2026-04-02"
+    },
+    {
+      "id": "pbo-reports",
+      "name": "Parliamentary Budget Officer",
+      "shortName": "PBO",
+      "category": "government",
+      "subcategory": "fiscal",
+      "credibility": "primary",
+      "biasRating": "none",
+      "reliabilityScore": 10,
+      "updateFrequency": "monthly",
+      "urls": {
+        "main": "https://www.pbo-dpb.gc.ca/en/",
+        "rss": "https://www.pbo-dpb.gc.ca/en/rss-feeds--fil-de-nouvelles"
+      },
+      "contact": {
+        "name": "Communications",
+        "email": "info@pbo-dpb.gc.ca"
+      },
+      "citationFormat": "Office of the Parliamentary Budget Officer. (YYYY). [Report Title]. Retrieved from https://www.pbo-dpb.gc.ca/en/",
+      "lastVerified": "2026-04-02"
+    },
+    {
+      "id": "statscan-labour",
+      "name": "Statistics Canada - Labour Force Survey",
+      "shortName": "StatsCan LFS",
+      "category": "government",
+      "subcategory": "labour",
+      "credibility": "primary",
+      "biasRating": "none",
+      "reliabilityScore": 10,
+      "updateFrequency": "monthly",
+      "nextUpdate": "2026-05-09",
+      "urls": {
+        "main": "https://www.statcan.gc.ca/en/surveys/labour/lfs",
+        "table": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701"
+      },
+      "contact": {
+        "name": "Labour Statistics Division",
+        "email": "infostats@statcan.gc.ca"
+      },
+      "citationFormat": "Statistics Canada. (YYYY, Month DD). Labour Force Survey, Table 14-10-0287-01. Retrieved from https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+      "lastVerified": "2026-04-02"
+    }
+  ]
+}
