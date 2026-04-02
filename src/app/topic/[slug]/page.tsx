@@ -87,13 +87,6 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
                 <Compass className="w-4 h-4" />
                 Explore
               </Link>
-              <Link 
-                href="/data/"
-                className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                <BarChart3 className="w-4 h-4" />
-                Data
-              </Link>
             </div>
           </div>
         </div>
@@ -106,23 +99,18 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
             {/* At a Glance */}
             <section className="bg-white rounded-xl border p-6 shadow-sm">
               <h2 className="text-xl font-bold text-gray-900 mb-4">At a Glance</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <div className="text-sm text-gray-600 mb-1">Current CPI</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="p-4 bg-gray-50 rounded-lg text-center">
                   <div className="text-3xl font-bold text-gray-900">{inflation.value}%</div>
-                  <div className="flex items-center gap-2 mt-2">
-                    <SourceBadge source={inflation.source} compact />
-                  </div>
+                  <div className="text-sm text-gray-600 mt-1">Current CPI</div>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <div className="text-sm text-gray-600 mb-1">Bank of Canada Target</div>
+                <div className="p-4 bg-gray-50 rounded-lg text-center">
                   <div className="text-3xl font-bold text-gray-900">2%</div>
-                  <div className="text-sm text-gray-500 mt-2">Range: 1-3%</div>
+                  <div className="text-sm text-gray-600 mt-1">Bank of Canada Target</div>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <div className="text-sm text-gray-600 mb-1">Trend</div>
+                <div className="p-4 bg-gray-50 rounded-lg text-center">
                   <div className="text-3xl font-bold text-green-600">↓</div>
-                  <div className="text-sm text-gray-500 mt-2">Cooling toward target</div>
+                  <div className="text-sm text-gray-600 mt-1">Trend: Cooling</div>
                 </div>
               </div>
             </section>
@@ -185,7 +173,7 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 Primary Sources
               </h3>
-              <SourceList sources={topic.externalSources} groupByCategory={false} />
+              <SourceList sources={topic.externalSources || []} groupByCategory={false} />
               <Link 
                 href="#all-sources"
                 className="mt-4 text-sm text-blue-600 hover:underline block"
@@ -214,7 +202,7 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
             <div className="bg-gray-50 rounded-xl border p-6">
               <h3 className="font-bold text-gray-900 mb-2">Cite This Page</h3>
               <p className="text-xs text-gray-600 mb-3">
-                TrueNorth Research Hub. (2026). "{topic.title}". Retrieved from https://truenorthhub.ca/topic/{topic.slug}/
+                TrueNorth Research Hub. (2026). &quot;{topic.title}&quot;. Retrieved from https://truenorthhub.ca/topic/{topic.slug}/
               </p>
               <button className="text-sm text-blue-600 hover:underline">
                 Copy citation
