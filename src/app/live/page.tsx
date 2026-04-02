@@ -65,7 +65,7 @@ export default function LiveCentre() {
             </div>
 
             <div className="bg-white rounded-xl border p-6">
-              <h2 className="text-lg font-bold text-gray-900 mb-4">Today's Schedule</h2>
+              <h2 className="text-lg font-bold text-gray-900 mb-4">Today&apos;s Schedule</h2>
               <div className="space-y-4">
                 {liveFeeds.map((feed, idx) => (
                   <div key={idx} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
