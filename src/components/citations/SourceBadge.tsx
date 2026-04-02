@@ -43,7 +43,7 @@ export default function SourceBadge({ source, showDetails = false, compact = fal
         className="inline-flex items-center gap-2 cursor-pointer group"
         onClick={() => setShowModal(true)}
       >
-        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${colorClass} bg-opacity-20 text-gray-800`}>
+        <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${colorClass} bg-opacity-20 text-gray-800`}>
           <Icon className="w-3.5 h-3.5" />
           {CREDIBILITY_LABELS[source.credibility]}
         </span>
