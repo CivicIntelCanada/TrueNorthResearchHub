@@ -1,12 +1,12 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-// Tailwind class merger
+// Tailwind class merger - used by components
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Group array by key
+// Group array by key - used by SourceList
 export function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
   return array.reduce((result, item) => {
     const groupKey = String(item[key]);
