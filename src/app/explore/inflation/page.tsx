@@ -20,7 +20,7 @@ import SourceBadge from '@/components/citations/SourceBadge';
 import { getMockInflationData, getSourceById } from '@/lib/sources';
 
 // Define the rabbit hole nodes
-const exploreNodes = {
+const exploreNodes: Record<string, any> = {
   root: {
     id: 'root',
     title: 'Current Inflation: 2.8%',
@@ -83,12 +83,11 @@ export default function ExploreInflation() {
   const [currentNodeId, setCurrentNodeId] = useState('root');
   const [history, setHistory] = useState<string[]>(['root']);
   
-  const currentNode = exploreNodes[currentNodeId as keyof typeof exploreNodes];
+  const currentNode = exploreNodes[currentNodeId];
   const source = getSourceById(currentNode.source);
 
   const navigateTo = (nodeId: string) => {
     if (nodeId === 'root' && currentNodeId !== 'root') {
-      // Going back to root
       setHistory(['root']);
     } else {
       setHistory([...history, nodeId]);
@@ -163,7 +162,7 @@ export default function ExploreInflation() {
             <Compass className="w-4 h-4 flex-shrink-0" />
             <span className="font-medium">Exploring:</span>
             {history.map((nodeId, idx) => {
-              const node = exploreNodes[nodeId as keyof typeof exploreNodes];
+              const node = exploreNodes[nodeId];
               return (
                 <span key={nodeId} className="flex items-center gap-2 flex-shrink-0">
                   {idx > 0 && <ChevronRight className="w-4 h-4 text-blue-400" />}
@@ -239,7 +238,7 @@ export default function ExploreInflation() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {currentNode.connections.map((connection) => (
+            {currentNode.connections.map((connection: any) => (
               <button
                 key={connection.id}
                 onClick={() => navigateTo(connection.id)}
@@ -292,7 +291,7 @@ export default function ExploreInflation() {
         {/* Help Box */}
         <div className="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
           <p className="font-medium text-gray-900 mb-1">💡 Stuck in a rabbit hole?</p>
-          <p>Use the "Exit to Topic View" button for structured information, "Back" to retrace steps, or "Home" to start fresh.</p>
+          <p>Use the &quot;Exit to Topic View&quot; button for structured information, &quot;Back&quot; to retrace steps, or &quot;Home&quot; to start fresh.</p>
         </div>
       </div>
     </div>
