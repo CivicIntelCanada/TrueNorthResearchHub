@@ -1,6 +1,36 @@
+"use client";
+
 import { TrendingUp, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 import SourceBadge from '@/components/citations/SourceBadge';
-import { getMockInflationData, getMockUnemploymentData, getMockPolicyRate, getAllSources } from '@/lib/sources';
+import { getMockInflationData, getMockUnemploymentData, getMockPolicyRate } from '@/lib/sources';
+
+// Define the TrendIndicator component that's missing
+function TrendIndicator({ trend, change }: { trend: 'up' | 'down' | 'stable'; change: number }) {
+  if (trend === 'up') {
+    return (
+      <div className="flex items-center text-green-600 bg-green-50 px-2 py-1 rounded-full text-sm font-medium">
+        <ArrowUpRight className="w-4 h-4 mr-1" />
+        {change > 0 ? `+${change}` : change}%
+      </div>
+    );
+  }
+  
+  if (trend === 'down') {
+    return (
+      <div className="flex items-center text-red-600 bg-red-50 px-2 py-1 rounded-full text-sm font-medium">
+        <ArrowDownRight className="w-4 h-4 mr-1" />
+        {change}%
+      </div>
+    );
+  }
+  
+  return (
+    <div className="flex items-center text-gray-600 bg-gray-100 px-2 py-1 rounded-full text-sm font-medium">
+      <Minus className="w-4 h-4 mr-1" />
+      Stable
+    </div>
+  );
+}
 
 export default function DataDashboard() {
   const indicators = [
@@ -80,4 +110,49 @@ export default function DataDashboard() {
 
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="text-4xl font-bold text-gray-900">{indicator.value}</span>
-                  <div
+                  <span className="text-sm text-gray-500">{indicator.period}</span>
+                </div>
+
+                {'components' in indicator && indicator.components && (
+                  <div className="space-y-2 mt-4">
+                    <p className="text-sm font-medium text-gray-700">Components:</p>
+                    {indicator.components.map((comp) => (
+                      <div key={comp.label} className="flex justify-between text-sm">
+                        <span className="text-gray-600">{comp.label} ({comp.weight})</span>
+                        <span className="font-medium text-gray-900">{comp.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {'breakdown' in indicator && indicator.breakdown && (
+                  <div className="space-y-2 mt-4">
+                    <p className="text-sm font-medium text-gray-700">Breakdown:</p>
+                    {indicator.breakdown.map((item) => (
+                      <div key={item.label} className="flex justify-between text-sm">
+                        <span className="text-gray-600">{item.label}</span>
+                        <span className="font-medium text-gray-900">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {'nextDecision' in indicator && (
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <span className="font-medium">Next Decision:</span> {indicator.nextDecision}
+                    </p>
+                  </div>
+                )}
+
+                <div className="mt-4 pt-4 border-t">
+                  <SourceBadge source={indicator.source} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
