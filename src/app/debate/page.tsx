@@ -1,4 +1,4 @@
-import { MessageCircle, ThumbsUp, ThumbsDown, User, Clock } from 'lucide-react';
+import { MessageCircle, ThumbsUp, User, Clock } from 'lucide-react';
 
 export default function Debate() {
   const debates = [
@@ -39,7 +39,7 @@ export default function Debate() {
             <MessageCircle className="w-8 h-8 text-purple-600" />
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Debate Hub</h1>
-              <p className="text-gray-600">Civil discourse on Canada's most important issues</p>
+              <p className="text-gray-600">Civil discourse on Canada&apos;s most important issues</p>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function Debate() {
             <li>• Cite sources for factual claims</li>
             <li>• Engage with ideas, not individuals</li>
             <li>• Assume good faith</li>
-            <li>• Flag violations, don't escalate</li>
+            <li>• Flag violations, don&apos;t escalate</li>
           </ul>
         </div>
       </div>
