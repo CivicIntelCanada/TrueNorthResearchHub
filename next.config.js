@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {}, // Empty experimental object
   images: {
     domains: ['localhost'],
     unoptimized: true
