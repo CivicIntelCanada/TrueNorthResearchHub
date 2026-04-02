@@ -85,7 +85,7 @@ export default function FactCheck() {
                     </span>
                     <span className="text-sm text-gray-500">{check.date}</span>
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">"{check.claim}"</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">&quot;{check.claim}&quot;</h3>
                   <p className="text-gray-600 mb-3">{check.explanation}</p>
                   <p className="text-sm text-gray-500">Source: {check.source}</p>
                 </div>
