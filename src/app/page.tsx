@@ -45,7 +45,7 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Canada's Most Comprehensive<br />
+            Canada&apos;s Most Comprehensive<br />
             <span className="text-blue-300">Research Database</span>
           </h1>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
